@@ -12,28 +12,43 @@
   <header class="bg-blue-600 text-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold">Belajar Inggris SMA</h1>
-      <nav class="space-x-4">
+      <!-- Hamburger -->
+      <button id="menuBtn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <!-- Menu -->
+      <nav id="menu" class="hidden md:flex space-x-4">
         <a href="#fitur" class="hover:underline">Fitur</a>
         <a href="login.html" class="hover:underline">Login</a>
         <a href="register.html" class="bg-white text-blue-600 px-4 py-2 rounded-md hover:bg-gray-100">Daftar</a>
       </nav>
     </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-4 pb-4">
+      <a href="#fitur" class="block py-2 hover:underline">Fitur</a>
+      <a href="login.html" class="block py-2 hover:underline">Login</a>
+      <a href="register.html" class="block py-2 bg-white text-blue-600 px-4 py-2 rounded-md hover:bg-gray-100 w-fit">Daftar</a>
+    </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-blue-100 py-20 text-center">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-4">Platform Belajar Bahasa Inggris Interaktif</h2>
-      <p class="text-lg mb-8">Asah kemampuan Reading, Writing, Speaking, dan Listening kamu dengan mudah!</p>
+  <section class="bg-blue-100 py-20 text-center px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Platform Belajar Bahasa Inggris Interaktif</h2>
+      <p class="text-base sm:text-lg mb-8">Asah kemampuan Reading, Writing, Speaking, dan Listening kamu dengan mudah!</p>
       <a href="dashboard.html" class="bg-blue-600 text-white px-6 py-3 rounded-md text-lg hover:bg-blue-700 transition">Mulai Belajar</a>
     </div>
   </section>
 
   <!-- Fitur -->
-  <section id="fitur" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h3 class="text-3xl font-semibold text-center mb-10">Fitur Utama</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+  <section id="fitur" class="py-16 bg-white px-4">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-2xl sm:text-3xl font-semibold text-center mb-10">Fitur Utama</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
         <div class="p-6 border rounded-lg shadow hover:shadow-md">
           <h4 class="text-xl font-semibold mb-2">?? Reading</h4>
           <p>Baca teks dan pahami isi bacaan dengan latihan skimming dan scanning.</p>
@@ -55,9 +70,19 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 py-6 mt-16 text-center text-sm text-gray-600">
+  <footer class="bg-gray-100 py-6 mt-16 text-center text-sm text-gray-600 px-4">
     © 2025 Belajar Inggris SMA. All rights reserved.
   </footer>
+
+  <!-- JS for Mobile Menu Toggle -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 
 </body>
 </html>
